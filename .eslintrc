@@ -1,18 +1,21 @@
 {
   "parser": "@typescript-eslint/parser",
   "extends": [
-    "wesbos",
+    // "wesbos",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended" // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
   "parserOptions": {
-    "ecmaVersion": 2018, // Allows for the parsing of modern ECMAScript features
+    "ecmaVersion": 2020, // Allows for the parsing of modern ECMAScript features
     "sourceType": "module", // Allows for the use of imports
     "ecmaFeatures": {
       "jsx": true // Allows for the parsing of JSX
     }
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": [
+    "@typescript-eslint"
+  ],
   "rules": {
     "prettier/prettier": [
       "error",
@@ -30,17 +33,24 @@
         "html": true
       }
     ],
-    "padded-blocks": ["error", "never"],
+    "padded-blocks": [
+      "error",
+      "never"
+    ],
     "padding-line-between-statements": [
       "error",
       {
         "blankLine": "always",
         "prev": "*",
-        "next": ["export"]
+        "next": [
+          "export"
+        ]
       },
       {
         "blankLine": "always",
-        "prev": ["export"],
+        "prev": [
+          "export"
+        ],
         "next": "*"
       }
     ],
